@@ -3,6 +3,7 @@ var less   = require('gulp-less');
 var minify = require('gulp-minify');
 
 var connect = require('gulp-connect');
+var clean   = require('gulp-clean');
 var util    = require('gulp-util');
 
 gulp.task('src', () => {
@@ -30,7 +31,7 @@ gulp.task('watch', () => {
     gulp.watch('./resources/less/**/*.less', [ 'less' ]);
 });
 
-gulp.task('server', function() {
+gulp.task('server', () => {
     connect.server({
         root: 'www',
         index: 'index.htm',
@@ -39,4 +40,15 @@ gulp.task('server', function() {
     });
 });
 
+gulp.task('clean-www', () => {
+    gulp.src('./www', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('clean-nm', () => {
+    gulp.src('./node_modules', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('clean-all', ['clean-www', 'clean-nm']);
 gulp.task('default', ['src', 'less', 'third']);
