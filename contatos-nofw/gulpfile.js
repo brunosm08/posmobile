@@ -1,9 +1,9 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
+var gulp   = require('gulp');
+var less   = require('gulp-less');
 var minify = require('gulp-minify');
 
 var connect = require('gulp-connect');
-var util = require('gulp-util');
+var util    = require('gulp-util');
 
 gulp.task('src', () => {
     gulp.src('./src/javascript/**/*.js')
@@ -15,7 +15,7 @@ gulp.task('src', () => {
 });
 
 gulp.task('less', () => {
-    gulp.src('./resources/less/**/*.less')
+    gulp.src('./src/less/**/*.less')
         .pipe(less({compress: true}))
         .pipe(gulp.dest('./www/assets/css'));
 });
