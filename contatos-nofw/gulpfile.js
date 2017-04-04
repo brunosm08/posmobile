@@ -27,8 +27,9 @@ gulp.task('third', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch('./src/**/*.js', [ 'src' ]);
-    gulp.watch('./resources/less/**/*.less', [ 'less' ]);
+    gulp.watch('./src/**/*.js',   [ 'src' ]);
+    gulp.watch('./src/**/*.htm',  [ 'src' ]);
+    gulp.watch('./src/**/*.less', [ 'less' ]);
 });
 
 gulp.task('server', () => {

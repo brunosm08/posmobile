@@ -3,6 +3,7 @@
 @colorLightGray: #888888;
 @colorDanger: #ff0000;
 @colorConfirm: #4CAF50;
+@colorLightBlue: #28aadc;
 
 // Outros estilos
 @border: 1px solid @colorLightGray;
@@ -12,6 +13,56 @@
 @boxShadowActive: inset 0 1px 1px rgba(0,0,0,.075), 0 0 0.2em rgba(60,179,113, 0.6);
 @boxShadowDanger: inset 0 1px 1px rgba(0,0,0,.075), 0 0 0.2em rgba(255,0,0, 0.6);
 
-header {
+html {
     color: @colorGray;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: @colorLightBlue;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.panel {
+    width: 100%;
+    flex-grow: 1;
+    padding: 0.5em 0.3em;
+}
+
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+header {
+    color: black;
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+    font-size: 2em;
+    padding: 0.5em 0.2em;
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0.5em 0.2em;
+}
+
+footer > div > i {
+    font-size: 2em !important;
 }
