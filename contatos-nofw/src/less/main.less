@@ -9,6 +9,7 @@
 @colorGray: #666666;
 @colorLightGray: #888888;
 @colorDanger: #ff0000;
+@colorOrange: orange;
 @colorGreen: #4CAF50;
 @colorLightBlue: #28aadc;
 @colorConfirm: @colorGreen;
@@ -21,110 +22,91 @@
 
 @baseFontDir: '../third/fonts/Ubuntu';
 
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('@{baseFontDir}/Ubuntu-Bold.ttf') format('truetype');
-    src: url('@{baseFontDir}/Ubuntu-BoldItalic.ttf') format('truetype');
-    src: url('@{baseFontDir}/Ubuntu-Italic.ttf') format('truetype');
-    src: url('@{baseFontDir}/Ubuntu-Light.ttf') format('truetype');
-    src: url('@{baseFontDir}/Ubuntu-LightItalic.ttf') format('truetype');
-    src: url('@{baseFontDir}/Ubuntu-Medium.ttf') format('truetype');
-    src: url('@{baseFontDir}/Ubuntu-MediumItalic.ttf') format('truetype');
-    src: url('@{baseFontDir}/Ubuntu-Regular.ttf') format('truetype');
+* {
+    box-sizing: border-box;
+    font-family: 'arial';
 }
 
-html {
-    color: @colorGray;
-    font-size: 16px;
-    font-weight: 300;
-    font-family: 'Ubuntu Light';
-}
-
-body {
+html, body {
     margin: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    padding: 0;
 }
 
-a:link {
-    text-decoration: none;
-    color: @colorGray;
+.activity {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+
+    padding-top: 20px;
 }
 
 .panel {
     flex-grow: 1;
-    margin: 0 2vw;
-}
-
-.keyboard {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100%;
+    // border: 1px solid red;
 }
 
 .kb_key {
-    border: 2px solid @colorGreen;
-    border-radius: calc(100% / 2);
-    width: 23vw;
-    height: 23vw;
-    font-size: 3em;
-    font-weight: normal;
-    text-align: center;
+    border: 2px solid @colorOrange;
+    border-radius: calc(50%);
+
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
-.kb_key:last-child {
-    // margin-top: 1em;
-    display: flex;
-    align-self: flex-end;
-    flex-grow: 1;
-    border-radius: 1em;
-    // background-color: @colorGreen;
-    // color: white;
-    font-size: 3em;
+.kb_key * {
+    text-align: center;
 }
 
-.kb_key:hover {
+.kb_key:last-child {
+    grid-column: span 3;
+    border-radius: 1em;
+    font-size: 3em;
     background-color: @colorGreen;
+    border-color: @colorLightGray;
     color: white;
 }
 
-.kb_value {}
+.kb_value {
+    font-size: 2em;
+
+    // border: 1px solid aqua;
+}
 
 .kb_sub_value {
-    font-size: 0.3em;
+    font-size: 0.7em;
+    // border: 1px solid orange;
 }
 
-.panel-top {
-    color: black;
+#panel-keyboard {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+#input_keyboard_wrapper {
     font-size: 2em;
-    margin: 2vh 2vw;
+    padding: 2vh 4vw;
+    // border: 1px solid blue;
 }
 
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    margin: 2vh 2vw;
-}
+#keyboard {
+    @keySize: max(12vw, 12vh);
+    display: grid;
+    grid-template-columns: @keySize @keySize @keySize;
+    grid-auto-rows: @keySize;
+    // align-content: space-around;
+    grid-row-gap: 3vh;
+    justify-content: space-around;
 
-footer p {
-    margin: 0;
-    font-size: 0.8em;
-}
-
-footer > a > i {
-    font-size: 3em !important;
+    flex-grow: 1;
+    // border: 1px solid yellow;
 }
