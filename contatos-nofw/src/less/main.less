@@ -5,6 +5,22 @@
 // http://caniuse.com
 // https://everythingfonts.com/font-face
 
+// Contacts
+// Offline apps
+// Indexed database
+// Web workers
+// Web storage
+// Web sockets
+// Server-Sent Events
+// XMLHttpRequest2
+// Geolocation
+// Canvas 2D Context
+// Media Capture
+// Web Messaging
+// Forms
+// File API
+
+
 // Cores
 @colorGray: #666666;
 @colorLightGray: #888888;
@@ -30,20 +46,44 @@
 html, body {
     margin: 0;
     padding: 0;
+    color: @colorGray;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh 4vw;
+}
+
+footer > p {
+    margin: 0;
+    text-align: center;
+    background-color: white;
+    border: 0;
+    font-size: 0.7rem !important;
+}
+
+footer > p:before {
+    font-size: 2.5rem;
+    display: block;
 }
 
 .activity {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
-
-    padding-top: 20px;
 }
 
 .panel {
+    display: block;
     flex-grow: 1;
     // border: 1px solid red;
+}
+
+.panel-hidden {
+    display: none;
 }
 
 .kb_key {
@@ -99,7 +139,7 @@ html, body {
 }
 
 #keyboard {
-    @keySize: max(12vw, 12vh);
+    @keySize: 12vh;
     display: grid;
     grid-template-columns: @keySize @keySize @keySize;
     grid-auto-rows: @keySize;

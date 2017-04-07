@@ -14,29 +14,35 @@
     <div class="activity">
 
         <div id="panel-keyboard" class="panel">
-            <div id="input_keyboard_wrapper">
-                (63) 99293-6006
-            </div>
+            <input type="text" readonly="true" id="input_keyboard_wrapper" value="" />
 
             <div id="keyboard">
-                <a class="kb_key"><span class="kb_value">1</span></a>
-                <a class="kb_key"><span class="kb_value">2</span><span class="kb_sub_value">ABC</span></a>
-                <a class="kb_key"><span class="kb_value">3</span><span class="kb_sub_value">DEF</span></a>
-                <a class="kb_key"><span class="kb_value">4</span><span class="kb_sub_value">GHI</span></a>
-                <a class="kb_key"><span class="kb_value">5</span><span class="kb_sub_value">JKL</span></a>
-                <a class="kb_key"><span class="kb_value">6</span><span class="kb_sub_value">MNO</span></a>
-                <a class="kb_key"><span class="kb_value">7</span><span class="kb_sub_value">PQRS</span></a>
-                <a class="kb_key"><span class="kb_value">8</span><span class="kb_sub_value">TUV</span></a>
-                <a class="kb_key"><span class="kb_value">9</span><span class="kb_sub_value">WXYZ</span></a>
-                <a class="kb_key"><span class="kb_value">*</span></a>
-                <a class="kb_key"><span class="kb_value">0</span><span class="kb_sub_value">+</span></a>
-                <a class="kb_key"><span class="kb_value">#</span></a>
-                <a class="kb_key"><span class="fb_value"><i class="fa fa-phone"></i></span></a>
+                <a class="kb_key" data-key-value="1"><span class="kb_value">1</span></a>
+                <a class="kb_key" data-key-value="2"><span class="kb_value">2</span><span class="kb_sub_value">ABC</span></a>
+                <a class="kb_key" data-key-value="3"><span class="kb_value">3</span><span class="kb_sub_value">DEF</span></a>
+                <a class="kb_key" data-key-value="4"><span class="kb_value">4</span><span class="kb_sub_value">GHI</span></a>
+                <a class="kb_key" data-key-value="5"><span class="kb_value">5</span><span class="kb_sub_value">JKL</span></a>
+                <a class="kb_key" data-key-value="6"><span class="kb_value">6</span><span class="kb_sub_value">MNO</span></a>
+                <a class="kb_key" data-key-value="7"><span class="kb_value">7</span><span class="kb_sub_value">PQRS</span></a>
+                <a class="kb_key" data-key-value="8"><span class="kb_value">8</span><span class="kb_sub_value">TUV</span></a>
+                <a class="kb_key" data-key-value="9"><span class="kb_value">9</span><span class="kb_sub_value">WXYZ</span></a>
+                <a class="kb_key" data-key-value="*"><span class="kb_value">*</span></a>
+                <a class="kb_key" data-key-value="0"><span class="kb_value">0</span><span class="kb_sub_value">+</span></a>
+                <a class="kb_key" data-key-value="#"><span class="kb_value">#</span></a>
+                <a class="kb_key" data-key-value="call"><span class="fb_value"><i class="fa fa-phone"></i></span></a>
             </div>
         </div>
+
+        <footer>
+            <p class="fa fa-clock-o">Recentes</p>
+            <p class="fa fa-bars">Teclado</p>
+            <p class="fa fa-address-book">Contatos</p>
+        </footer>
 
     </div>
 
 </body>
+
+<script src="./assets/js/main.js"></script>
 
 </html>

@@ -1,6 +1,7 @@
 var gulp   = require('gulp');
 var less   = require('gulp-less');
 var minify = require('gulp-minify');
+var babel  = require('gulp-babel');
 
 var connect = require('gulp-connect');
 var clean   = require('gulp-clean');
@@ -8,7 +9,10 @@ var util    = require('gulp-util');
 
 gulp.task('src', () => {
     gulp.src('./src/javascript/**/*.js')
-        .pipe(minify())
+        // .pipe(minify())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(gulp.dest('www/assets/js'));
 
     gulp.src('./src/html/**/*.htm')
