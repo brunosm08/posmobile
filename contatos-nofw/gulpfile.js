@@ -9,10 +9,10 @@ var util    = require('gulp-util');
 
 gulp.task('src', () => {
     gulp.src('./src/javascript/**/*.js')
+        // .pipe(babel({
+            // presets: ['es2015']
+        // }))
         // .pipe(minify())
-        .pipe(babel({
-            presets: ['es2015']
-        }))
         .pipe(gulp.dest('www/assets/js'));
 
     gulp.src('./src/html/**/*.htm')
