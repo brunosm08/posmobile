@@ -15,5 +15,7 @@ Toda a bibliografia referente à disciplina está em links no slide. Acesse em: 
 * treinar a instalação do cordova, tente instalar e rodar com OSX + Android/iOS, linux + Android, windows + Android/WP, o que você puder
 * estudar o básico do Angular v4 ([angular.io](https://angular.io/))
 
-obs1: durante as aulas usamos o **gulp** para a construção do diretório **www** o qual fica todo o código e recurso necessário para um aplicativo híbrido, o **cordova** pede que você preencha exatamente um diretório contendo isso. Ento você já sabe o que fazer para rodar seu app com o cordova :)
-obs2: usando um emulador do android, atualmente não é possível usufruir do Gridlayout, talvez seja possível executando num android com Chrome atualizado. No iOS recente  possível.
+
+## Observações
+0. durante as aulas usamos o **gulp** para a construção do diretório **www** o qual fica todo o código e recurso necessário para um aplicativo híbrido, o **cordova** pede que você preencha exatamente um diretório contendo isso. Então você já sabe o que fazer para rodar seu app com o cordova :)
+0. usando um emulador do android, atualmente não é possível usufruir do Gridlayout, talvez seja possível executando num android com Chrome atualizado. No iOS recente é possível.
