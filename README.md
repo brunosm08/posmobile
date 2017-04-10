@@ -19,3 +19,4 @@ Toda a bibliografia referente à disciplina está em links no slide. Acesse em: 
 ## Observações
 0. durante as aulas usamos o **gulp** para a construção do diretório **www** o qual fica todo o código e recurso necessário para um aplicativo híbrido, o **cordova** pede que você preencha exatamente um diretório contendo isso. Então você já sabe o que fazer para rodar seu app com o cordova :)
 0. usando um emulador do android, atualmente não é possível usufruir do Gridlayout, talvez seja possível executando num android com Chrome atualizado. No iOS recente é possível.
+0. infelizmente eu esqueci de copiar o projeto que estava sendo desenvolvido em sala, porém aqui no github tem um projeto bem similar ao que fizemos em sala de aula, ele é um pouco mais complexo, mas é tranquilo de entender o que foi feito lá.
