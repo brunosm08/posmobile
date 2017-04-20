@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Classificados</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/third/css/font-awesome.min.css">
+</head>
+
+<body class="m-scene">
+
+<div id="home" class="scene_element">
+
+    <h1>Classificados</h1>
+
+    <div class="wrapper">
+        <div class="box" style="background-image: url('assets/images/apartamento.jpg')"
+             onclick="nextPage('lista', 'Imoveis')"><span
+                class="legend">Imoveis</span></div>
+        <div class="box" style="background-image: url('assets/images/corolla.jpg')"
+             onclick="nextPage('lista', 'Veiculos')"><span
+                class="legend">Veiculos</span></div>
+    </div>
+
+</div>
+
+<div id="lista" class="scene_element">
+    <h2><a href="#" onclick="previousPage('home')">Classificados</a> / <small id="list_title"></small></h2>
+
+    <div class="wrapper">
+        <div class="box itens imoveis" style="background-image: url('assets/images/apartamento.jpg')"
+             onclick="nextPage('detalhes', 'Imoveis', 'Apartamento 1')"><span
+                class="legend">Apart. 1</span></div>
+        <div class="box itens imoveis" style="background-image: url('assets/images/apartamento2.jpg')"
+             onclick="nextPage('detalhes', 'Imoveis', 'Apartamento 2')"><span
+                class="legend">Apart. 2</span></div>
+        <div class="box itens imoveis" style="background-image: url('assets/images/casa.jpg')"
+             onclick="nextPage('detalhes', 'Imoveis', 'Casa 1')"><span class="legend">Casa 1</span>
+        </div>
+        <div class="box itens imoveis" style="background-image: url('assets/images/casa2.jpg')"
+             onclick="nextPage('detalhes', 'Imoveis', 'Casa 2')"><span class="legend">Casa 2</span>
+        </div>
+        <div class="box itens veiculos" style="background-image: url('assets/images/corolla.jpg')"
+             onclick="nextPage('detalhes', 'Veiculos', 'Corolla')"><span class="legend">Corolla</span>
+        </div>
+        <div class="box itens veiculos" style="background-image: url('assets/images/palio.jpg')"
+             onclick="nextPage('detalhes', 'Veiculos', 'Palio')"><span class="legend">Palio</span>
+        </div>
+    </div>
+
+    <button id="btn_voltar" type="button" class="btnVoltar">Voltar</button>
+</div>
+
+<div id="detalhes" class="scene_element">
+    <h4>
+        <a href="#" onclick="previousPage('home')">Classificados</a> /
+        <a href="#" id="list_title_2"></a> /
+        <small id="detalhes_title"></small>
+    </h4>
+
+
+    <img id="img_detalhes" src="" style="width: 100%;" />
+
+    <fieldset>
+        <label>Titulo: </label>
+        <span id="str_titulo"></span>
+        <br>
+        <label>Detalhes: </label>
+        <span id="str_detalhes"></span>
+        <br>
+        <label>Valor: </label>
+        <span id="str_valor"></span>
+    </fieldset>
+
+    <button id="btn_voltar_2" type="button" class="btnVoltar">Voltar</button>
+</div>
+
+</body>
+
+<script src="./assets/js/main.js"></script>
+
+</html>
