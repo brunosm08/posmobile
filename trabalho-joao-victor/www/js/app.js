@@ -1,3 +1,4 @@
+//Código ts para a mudança de telas
 let changeMenu = (evt, tela) => {
     let i, content, menus;
 
@@ -11,6 +12,6 @@ let changeMenu = (evt, tela) => {
         menus[i].className = menus[i].className.replace("active","");
     }
 
-    document.getElementById(tela).style.display = "grid";
+    document.getElementById(tela).style.display = "block";
     evt.currentTarget.className += "active";
 }

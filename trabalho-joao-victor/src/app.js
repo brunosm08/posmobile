@@ -1,3 +1,4 @@
+//Código ts para a mudança de telas
 let changeMenu = (evt, tela) => {
     let i, content, menus;
 
