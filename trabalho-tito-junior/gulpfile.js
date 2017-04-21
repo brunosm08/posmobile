@@ -14,7 +14,7 @@ gulp.task('server', () => {
 });
 
 gulp.task('assets-html', () => {
-    gulp.src('assets/html/index.html')
+    gulp.src('assets/html/*.html')
         .pipe(gulp.dest('www/'));
 });
 

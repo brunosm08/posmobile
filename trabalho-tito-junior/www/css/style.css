@@ -10,28 +10,28 @@ body {
   display: flex;
   flex-direction: row;
 }
-.screenOne {
+.app-wrap {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-.screenOne .statusBar {
+.statusBar {
   background: #512DA8;
   width: 100%;
   flex: 1;
 }
-.screenOne .toolbar {
+.toolbar {
   background: #673AB7;
   width: 100%;
   flex: 2;
 }
-.screenOne .content {
+.content {
   background: #f9f9f9;
   color: #212121;
   width: 100%;
   flex: 15;
 }
-.screenOne .navBar {
+.navBar {
   background: #673AB7;
   width: 100%;
   flex: 2;

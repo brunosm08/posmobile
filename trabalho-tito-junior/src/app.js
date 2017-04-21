@@ -1,17 +1,20 @@
 //Código ts para a mudança de telas
-let changeMenu = (evt, tela) => {
-    let i, content, menus;
-
-    content = document.getElementsByClassName("screens");
-    for(let i = 0; i < content.length; i++){
-        content[i].style.display = "none";
+let changeMenu = (evt, screen) => {
+    switch (screen) {
+        case 'screenOne':
+            setTimeout(function () {
+                window.location.href = '/index.html'
+            }, 500);
+            break;
+        case 'screenTwo':
+            setTimeout(function () {
+                window.location.href = '/twoScreen.html'
+            }, 500);
+            break;
+        case 'screenThree':
+            setTimeout(function () {
+                window.location.href = '/threeScreen.html'
+            }, 500);
+            break;
     }
-
-    menus = document.getElementsByClassName("tablinks");
-    for(let i = 0; i < menus.length; i++){
-        menus[i].className = menus[i].className.replace("active","");
-    }
-
-    document.getElementById(tela).style.display = "block";
-    evt.currentTarget.className += "active";
-}
+};
