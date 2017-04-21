@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="flex-container">
+
+    <!-- Primeira tela da aplicação -->
+    <div id="screenOne" class="screens screenOne">
+        <div class="screenOne statusBar"></div>
+        <div class='screenOne toolbar'>
+            <span>Contatos</span>
+        </div>
+        <div class='screenOne content'>
+            <h1>Primeira tela</h1>
+        </div>
+        <div class='screenOne navBar'>
+            <div class="menu">
+            <button class="tablinks item1 " onclick="changeMenu(event,'screenOne')">Tela 1</button>
+            <button class="tablinks item2 " onclick="changeMenu(event,'screenTwo')">Tela 2</button>
+            <button class="tablinks item3 " onclick="changeMenu(event,'screenThree')">Tela 3</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda tela da aplicação -->
+    <div id="screenTwo" class="screens screenTwo">
+        <!--<div class="statusBar"></div>-->
+        <!--<div class='toolbar'>-->
+            <!--<span>Contatos</span>-->
+        <!--</div>-->
+        <!--<div class='content'>-->
+            <!--<h1>Segunda tela</h1>-->
+        <!--</div>-->
+        <!--<div class='navBar'>-->
+            <!--<div class="menu">-->
+                <!--<button class="tablinks item1 " onclick="changeMenu(event,'screenOne')">Tela 1</button>-->
+                <!--<button class="tablinks item2 " onclick="changeMenu(event,'screenTwo')">Tela 2</button>-->
+                <!--<button class="tablinks item3 " onclick="changeMenu(event,'screenThree')">Tela 3</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+
+    <!-- Terceira tela da aplicação -->
+    <div id="screenThree" class="screens screenThree">
+        <!--<div class="statusBar"></div>-->
+        <!--<div class='toolbar'>-->
+            <!--<span>Contatos</span>-->
+        <!--</div>-->
+        <!--<div class='content'>-->
+            <!--<h1>Terceira tela</h1>-->
+        <!--</div>-->
+        <!--<div class='navBar'>-->
+            <!--<div class="menu">-->
+                <!--<button class="tablinks item1 " onclick="changeMenu(event,'screenOne')">Tela 1</button>-->
+                <!--<button class="tablinks item2 " onclick="changeMenu(event,'screenTwo')">Tela 2</button>-->
+                <!--<button class="tablinks item3 " onclick="changeMenu(event,'screenThree')">Tela 3</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+
+</div>
+
+<!-- Load the script before the page content -->
+<script src="js/app.js"></script>
+</body>
+</html>

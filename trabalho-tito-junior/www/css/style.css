@@ -1,0 +1,38 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.flex-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.screenOne {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.screenOne .statusBar {
+  background: #512DA8;
+  width: 100%;
+  flex: 1;
+}
+.screenOne .toolbar {
+  background: #673AB7;
+  width: 100%;
+  flex: 2;
+}
+.screenOne .content {
+  background: #f9f9f9;
+  color: #212121;
+  width: 100%;
+  flex: 15;
+}
+.screenOne .navBar {
+  background: #673AB7;
+  width: 100%;
+  flex: 2;
+}
