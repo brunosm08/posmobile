@@ -28,6 +28,22 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+      var options      = new ContactFindOptions();
+      options.filter   = "T";
+      options.multiple = true;
+      options.desiredFields = [navigator.contacts.fieldType.id];
+
+      function onSuccess(contacts) {
+          alert('Found ' + contacts.length + ' contacts.');
+      };
+
+      function onError(contactError) {
+          alert('onError!');
+      };
+
+      //options.hasPhoneNumber = true;
+      var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+      navigator.contacts.find(fields, onSuccess, onError, options);
         this.receivedEvent('deviceready');
     },
 
