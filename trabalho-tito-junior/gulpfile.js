@@ -24,6 +24,14 @@ gulp.task('assets-less', () => {
         .pipe(gulp.dest('www/css'));
 });
 
+gulp.task('font-awesome', () => {
+    gulp.src('node_modules/font-awesome/less/font-awesome.less')
+        .pipe(less())
+        .pipe(gulp.dest('www/css'));
+    gulp.src('node_modules/font-awesome/fonts/*')
+        .pipe(gulp.dest('www/fonts'));
+});
+
 gulp.task('src', () => {
     gulp.src('src/app.js')
         .pipe(gulp.dest('www/js'));
@@ -50,4 +58,4 @@ gulp.task('watch', ['browserSync'], () => {
     gulp.watch('src/*.js', browserSync.reload);
 });
 
-gulp.task('default', ['assets-html', 'assets-less', 'src']);
+gulp.task('default', ['assets-html', 'assets-less','font-awesome', 'src']);
