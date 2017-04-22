@@ -1,0 +1,27 @@
+@base: #f938ab;
+@colorGray: #666666;
+@colorLightGray: #888888;
+@colorDanger: #ff0000;
+@colorOrange: orange;
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    color: @colorGray;
+}
+
+.main {
+    display: -webkit-flex;
+    display: flex;
+}
+
+/** Para deixar uma corzinha de fundo nos divs filhos **/
+.main div {
+    background:#CCC;
+    margin-right:10px;
+}
+
+.main div.primeiroDiv {-webkit-order:2;}
+.main div.segundoDiv {-webkit-order:3;}
+.main div.terceiroDiv {-webkit-order:1;}
