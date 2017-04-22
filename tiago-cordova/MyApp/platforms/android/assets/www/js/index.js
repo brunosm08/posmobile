@@ -20,8 +20,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-        //var myContact = navigator.contacts.create({"displayName": "Test User"});
-        // document.addEventListener("deviceready", onDeviceReady2, false);
 
     },
 
@@ -30,6 +28,22 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+      var options      = new ContactFindOptions();
+      options.filter   = "T";
+      options.multiple = true;
+      options.desiredFields = [navigator.contacts.fieldType.id];
+
+      function onSuccess(contacts) {
+          alert('Found ' + contacts.length + ' contacts.');
+      };
+
+      function onError(contactError) {
+          alert('onError!');
+      };
+
+      //options.hasPhoneNumber = true;
+      var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+      navigator.contacts.find(fields, onSuccess, onError, options);
         this.receivedEvent('deviceready');
     },
 
@@ -41,7 +55,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
+        receivedElement.innerHTML = device.cordova;
         console.log('Received Event: ' + id);
     }
 
@@ -53,9 +67,5 @@ var app = {
 
 
 };
-// function onDeviceReady2() {
-//     var myContact = navigator.contacts.create({"displayName": "Test User"});
-//     myContact.note = "This contact has a note.";
-//     console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
-// }
+
 app.initialize();
