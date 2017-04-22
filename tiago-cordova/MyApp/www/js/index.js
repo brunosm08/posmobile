@@ -20,8 +20,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-        //var myContact = navigator.contacts.create({"displayName": "Test User"});
-        // document.addEventListener("deviceready", onDeviceReady2, false);
 
     },
 
@@ -41,8 +39,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-        parentElement.html(device.cordova);
-
+        receivedElement.innerHTML = device.cordova;
         console.log('Received Event: ' + id);
     }
 
@@ -54,9 +51,5 @@ var app = {
 
 
 };
-// function onDeviceReady2() {
-//     var myContact = navigator.contacts.create({"displayName": "Test User"});
-//     myContact.note = "This contact has a note.";
-//     console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
-// }
+
 app.initialize();
