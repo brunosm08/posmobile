@@ -1,10 +1,1 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  color: #666666;
-}
-.main {
-  display: -webkit-flex;
-  display: flex;
-}
+html,body{margin:0;padding:0;color:#666666}.main{display:-webkit-flex;display:flex}.main div{background:#CCC;margin-right:10px}.main div.primeiroDiv{-webkit-order:2}.main div.segundoDiv{-webkit-order:3}.main div.terceiroDiv{-webkit-order:1}
