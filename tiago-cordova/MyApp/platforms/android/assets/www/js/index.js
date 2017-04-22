@@ -20,32 +20,61 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-
+        document.getElementById("getPosition").addEventListener("click", getPosition);
+        document.getElementById("watchPosition").addEventListener("click", watchPosition);	
+        //document.addEventListener('geolocation', this.onGeolocation.bind(this), false);
     },
 
     // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
+
     onDeviceReady: function() {
-      var options      = new ContactFindOptions();
-      options.filter   = "T";
-      options.multiple = true;
-      options.desiredFields = [navigator.contacts.fieldType.id];
+      // var options      = new ContactFindOptions();
+      // options.filter   = "T";
+      // options.multiple = true;
+      // options.desiredFields = [navigator.contacts.fieldType.id];
+      //
+      // function onSuccess(contacts) {
+      //     alert('Found ' + contacts.length + ' contacts.');
+      // };
+      //
+      // function onError(contactError) {
+      //     alert('onError!');
+      // };
+      //
+      // //options.hasPhoneNumber = true;
+      // var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+      // navigator.contacts.find(fields, onSuccess, onError, options);
 
-      function onSuccess(contacts) {
-          alert('Found ' + contacts.length + ' contacts.');
-      };
 
-      function onError(contactError) {
-          alert('onError!');
-      };
+    // onSuccess Callback
+    // This method accepts a Position object, which contains the
+    // current GPS coordinates
+    //
+    var onSuccess = function(position) {
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              'Altitude: '          + position.coords.altitude          + '\n' +
+              'Accuracy: '          + position.coords.accuracy          + '\n' +
+              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+              'Heading: '           + position.coords.heading           + '\n' +
+              'Speed: '             + position.coords.speed             + '\n' +
+              'Timestamp: '         + position.timestamp                + '\n');
+    };
 
-      //options.hasPhoneNumber = true;
-      var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-      navigator.contacts.find(fields, onSuccess, onError, options);
-        this.receivedEvent('deviceready');
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout: 10000, enableHighAccuracy: true});
+
+      this.receivedEvent('deviceready');
+
+
     },
+
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -56,16 +85,65 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
         receivedElement.innerHTML = device.cordova;
+
         console.log('Received Event: ' + id);
     }
 
-    // Wait for device API libraries to load
-    //
-
-    // device APIs are available
-    //
-
 
 };
+
+function getPosition() {
+
+   var options = {
+      enableHighAccuracy: true,
+      maximumAge: 3600000
+   }
+
+   var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+
+   function onSuccess(position) {
+
+      alert('Latitude: '          + position.coords.latitude          + '\n' +
+         'Longitude: '         + position.coords.longitude         + '\n' +
+         'Altitude: '          + position.coords.altitude          + '\n' +
+         'Accuracy: '          + position.coords.accuracy          + '\n' +
+         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+         'Heading: '           + position.coords.heading           + '\n' +
+         'Speed: '             + position.coords.speed             + '\n' +
+         'Timestamp: '         + position.timestamp                + '\n');
+   };
+
+   function onError(error) {
+      alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+   }
+}
+
+function watchPosition() {
+
+   var options = {
+      maximumAge: 3600000,
+      timeout: 3000,
+      enableHighAccuracy: true,
+   }
+
+   var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+
+   function onSuccess(position) {
+
+      alert('Latitude: '          + position.coords.latitude          + '\n' +
+         'Longitude: '         + position.coords.longitude         + '\n' +
+         'Altitude: '          + position.coords.altitude          + '\n' +
+         'Accuracy: '          + position.coords.accuracy          + '\n' +
+         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+         'Heading: '           + position.coords.heading           + '\n' +
+         'Speed: '             + position.coords.speed             + '\n' +
+         'Timestamp: '         + position.timestamp                + '\n');
+   };
+
+   function onError(error) {
+      alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+   }
+
+}
 
 app.initialize();
