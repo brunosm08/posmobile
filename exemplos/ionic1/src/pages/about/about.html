@@ -10,5 +10,9 @@
 </ion-header>
 
 <ion-content padding>
-  Sobre o meu aplicativo
+  <ion-list *ngIf="users">
+    <button ion-item *ngFor="let user of users">
+      {{user.gender}}
+    </button>
+  </ion-list>
 </ion-content>
