@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
 
 import { Contacts, Contact, ContactFieldType } from '@ionic-native/contacts';
+import { Diagnostic } from '@ionic-native/diagnostic';
 
 @Component({
   selector: 'page-contatos',
@@ -15,9 +16,12 @@ export class ContatosPage {
     public navParams: NavParams,
     public contacts:Contacts,
     private alertCtrl:AlertController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private diagnostic: Diagnostic
   ) {
-    this.obterListaContatos();
+    this.diagnostic.requestContactsAuthorization()
+      .then((response) => this.obterListaContatos())
+      .catch((response) => console.log('usuario pode ter negado acesso.'));
   }
 
   obterListaContatos() {

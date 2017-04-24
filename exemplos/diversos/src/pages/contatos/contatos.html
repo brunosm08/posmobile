@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list *ngIf="contactsList">
     <button ion-item *ngFor="let contact of contactsList">
-      {{ contact.displayName }}
+      {{ contact.id }} - {{ contact.name.formatted }}
     </button>
   </ion-list>
 </ion-content>
