@@ -1,4 +1,4 @@
-document.querySelectorAll('div.conta').forEach(div => {
+document.querySelectorAll('div.universidade').forEach(div => {
     div.addEventListener('click', event => {
         document.querySelector('#terceira_tela').style.display = 'flex';
         document.querySelector('#segunda_tela').style.display = 'none';
